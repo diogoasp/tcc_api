@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<main>
+  <h2>Adicionar Cartas</h2>
+  <form action="" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div style="border-radius: 10px;">
+      {% for field in upload_form %}
+      {% if not field.label == 'Id'%}
+      <div class="mb-3" style="display: flex; flex-direction: row;">
+        <label class="form-label" style="width: 30%; align-self: end; margin-right: 1rem; min-width: 5rem; text-align: end;">{{ field.label }}:</label>
+        <span style="width: 70%; margin-left: auto;">{{ field }}</span>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <button type="submit" class="btn btn-lg btn-success md-5">Enviar</button>
+  </form>
+</main>
+{% comment %} Iterar sobre lista de novidades {% endcomment %}
+
+{% endblock %}

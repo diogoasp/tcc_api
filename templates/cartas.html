@@ -3,12 +3,37 @@
 {% block content %}
 <main>
   <h2>CARTAS MAIN CONTENT</h2>
-  {% for carta in cartas %}
-  <div class="card">
-    <h3>{{carta.nome}}</h3>
-    <h3>{{carta.custo}}</h3>
-  </div>
-  {% endfor %}
+
+  <a href="/upload">ADICIONAR</a>
+
+  {% for card in cartas %}
+
+  {% if carta == card.id %}
+  <a href="/cartas">
+    {% else %}
+    <a href="/cartas/{{card.id}}">
+      {% endif %}
+      <div class="card" style="background-color: aquamarine; border-radius: 10px; padding: 2%; width: 12%;">
+        <center>
+          <h3>{{card.name}}</h3>
+          <img src="{{card.img}}" alt="" style="width: 80%;">
+        </center>
+        <h3>Custo: {{card.cost}}</h3>
+        <h3>Ataque: {{card.atk}}</h3>
+        <h3>Vida: {{card.hp}}</h3>
+      </div>
+    </a>
+
+    {% if carta %}
+    {% if carta == card.id %}
+    <!-- posição absoluta, tela inteira, botão pra fechar -->
+    <div style="background-color: aqua; margin-top: 2%; padding: 2%;">
+      <img src="{{card.img}}" alt="">
+      <p>{{card.lore}}</p>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
 
 </main>
 {% endblock %}

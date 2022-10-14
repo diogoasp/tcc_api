@@ -7,18 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-
 <body>
-
   {% include "base/header.html" %}
-
-
   <h1>FUNCIONANDO LEGAL DEMAIS</h1>
 
   {% block content %}
   <main>
     <h2>MAIN CONTENT</h2>
   </main>
+  {% comment %} Iterar sobre lista de novidades {% endcomment %}
+
   {% endblock %}
 
   {% block aside %}

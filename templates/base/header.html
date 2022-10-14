@@ -2,9 +2,14 @@
 
 <nav>
   <ul>
-    <li>HOME</li>
-    <li>CARTAS</li>
+    <li> <a href="/">HOME</a></li>
+    <li> <a href="/cartas">CARTAS</a></li>
     <li>HISTÓRIA</li>
+    <li>
+      <a class="nav-link" href="{% url 'admin:index' %}">
+        <h4 class="btn btn-danger">Painel do Admnistrador</h4>
+      </a>
+    </li>
   </ul>
 </nav>
 
